@@ -714,10 +714,10 @@ p {
   .info {
     grid-template-columns: 1fr;
   }
-  .footer .box-container .box {
+  .footer .box-container .box-f {
     text-align: center;
   }
-  .footer .box-container .box .img-container {
+  .footer .box-container .box-f .img-container {
     justify-content: center;
   }  
 }
