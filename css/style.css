@@ -129,16 +129,18 @@ section {
   position: relative;
 }
 
+.dropdown .dropdown-content a {
+  font-size: 1.6rem !important;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
   left: 2rem;
-  min-width: 15rem;
-  /* background-color: rgba(255, 255, 255, 0.2); */
-  padding: 1rem;
+  padding-inline: 0rem;
+  min-width: 22rem;
   border-radius: 0.5rem;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); */
   z-index: 10;
 }
 
@@ -305,7 +307,41 @@ section {
   color: var(--cream);
 }
 
+/*---- Testimonials section ----*/
+.testimonials .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+}
+
+.testimonials .box-container .box {
+  background: var(--cream);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .box-container .box:hover {
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.testimonials .box-container .box img {
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
 /*---- Courses section ----*/
+.courses {
+  background: var(--cream-hover);
+}
+
 .courses .box-container {
   display: -ms-grid;
   display: grid;
