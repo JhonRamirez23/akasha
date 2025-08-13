@@ -123,6 +123,7 @@ section {
   display: flex;
   gap: 2rem;
   position: relative;
+  text-transform: capitalize;
 }
 
 .dropdown {
@@ -479,6 +480,16 @@ section {
 .blogs {
   margin-top: 10rem;
   background: var(--cream);
+}
+
+.blogs p {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: var(--blue-logo);
 }
 
 .blogs .box-container {
