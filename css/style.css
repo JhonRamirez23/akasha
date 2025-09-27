@@ -318,12 +318,12 @@ section {
 .testimonials .heading span {
   text-transform: uppercase;
   color: #555;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   display: block;
 }
 
 .testimonials .heading h3 {
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -550,7 +550,7 @@ section {
   margin: 0 auto;
   width: 100rem;
   padding: 2rem;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   color: var(--blue-logo);
 }
 
