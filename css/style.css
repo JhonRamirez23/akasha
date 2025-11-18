@@ -294,18 +294,43 @@ section {
 }
 
 .counter .box-container .box {
+  display: grid;
+  -ms-grid-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
   text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+}
+
+.counter .box-container .box:hover {
+  background: var(--cream-hover);
+}
+
+.counter .box-container .img-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+
+.counter .box-container .box .img-thumbnail {
+  width: 3rem;
+  border-radius: 50%;
+  background: var(--cream);
+  border-color: transparent;
 }
 
 .counter .box-container .box h3 {
-  font-size: 5rem;
+  font-size: 3rem;
   color: var(--blue-logo);
 }
 
 .counter .box-container .box p {
   font-size: 2rem;
-  text-transform: capitalize;
-  color: var(--cream);
+  font-weight: 300;
+  color: #000;
 }
 
 /*---- Testimonials section ----*/
@@ -327,85 +352,100 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ===== Contenedor general ===== */
+.carousel-container {
   position: relative;
-  width: 100%;
-  max-width: 120rem;
+  width: 90%;
+  max-width: 900px;
   margin: auto;
-  height: 400px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.carousel .box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 22rem;
-  height: auto;
-  transform: translate(-50%, -50%);
-  background: var(--cream);
+/* ===== Carrusel ===== */
+.carousel.linear {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 2rem;
   padding: 1rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel.linear::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.carousel.linear .box {
+  flex: 0 0 80%;
+  max-width: 600px;
+  background: var(--cream);
+  padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  scroll-snap-align: center;
   text-align: center;
-  transition: transform 0.5s, opacity 0;
-  opacity: 0;
 }
 
-.carousel .box p {
+.carousel.linear .box p {
   font-size: 1.4rem;
   color: var(--blue-logo);
   line-height: 1.5;
   margin-top: 1rem;
 }
 
-.carousel .box img {
-  width: 8rem;
-  height: auto;
+/* ===== Flechas ===== */
+.arrow {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
   border-radius: 50%;
-  margin: 0 auto 1rem auto;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  z-index: 5;
 }
 
-/* Posiciones clave: izquierda - centro - derecha */
-@keyframes rotate {
-  0% {
-    transform: translate(-150%, -50%) scale(0.8);
-    opacity: 0.5;
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.arrow.left {
+  position: absolute;
+  left: -2rem;
+}
+
+.arrow.right {
+  position: absolute;
+  right: -2rem;
+}
+
+/* Móvil: flechas más pequeñas */
+@media (max-width: 768px) {
+  .arrow {
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
   }
-  20% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 1;
+
+  .arrow.left {
+    left: -1rem;
   }
-  40% {
-    transform: translate(50%, -50%) scale(0.8);
-    opacity: 0.5;
+  .arrow.right {
+    right: -1rem;
   }
-  60% {
-    transform: translate(150%, -50%) scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-150%, -50%) scale(0.8);
-    opacity: 0.5;
+
+  .carousel.linear .box {
+    flex: 0 0 90%;
   }
 }
 
-/* Cada box entra en distinto momento */
-.carousel .box:nth-child(1) {
-  animation: rotate 15s infinite;
-}
-.carousel .box:nth-child(2) {
-  animation: rotate 15s infinite 3s;
-}
-.carousel .box:nth-child(3) {
-  animation: rotate 15s infinite 6s;
-}
-.carousel .box:nth-child(4) {
-  animation: rotate 15s infinite 9s;
-}
 
 /*---- Courses section ----*/
 .courses {
@@ -574,8 +614,16 @@ section {
   transform: scale(1.1);
 }
 
+.blogs .box-container .box .img-meditation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .blogs .box-container .img-meditation img {
-  width: 50rem;
+  margin: 1rem;
+  width: 33rem;
   border-radius: 1rem;
 }
 
