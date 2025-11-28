@@ -15,7 +15,7 @@
 :root {
   --turquoise: #159b9e;
   --turquoise-opaque: #9fcfd3;
-  --rosewood: #c3a7cd;
+  --rosewood: #c3a7cd; /* Mostrar este color #dac2e2*/
   --rosewood-opaque: #e0d1e6;
   --cream: #f2f2fa;
   --purple-logo: #a300cc;
@@ -599,6 +599,21 @@ section {
   padding: 2rem;
   font-size: 2.2rem;
   color: var(--blue-logo);
+}
+
+.blogs .icon-nyc {
+  border: 1px solid #000;
+  font-size: 3rem;
+  color: var(--purple-logo);
+  padding-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.blogs .icon-nyc img {
+  width: 5rem;
+  height: fit-content;
 }
 
 .blogs .box-container {
